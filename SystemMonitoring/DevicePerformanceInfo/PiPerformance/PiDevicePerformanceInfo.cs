@@ -20,7 +20,7 @@ namespace SystemMonitoring.DevicePerformanceInfo
             {
                 CpuUsage = GetCpuUsage(),
                 MemoryUsage = GetMemoryUsage(),
-                CpuHeat = GetCpuHeat(),
+                CpuHeat = GetCpuTemperature(),
             };
         }
 
@@ -40,7 +40,7 @@ namespace SystemMonitoring.DevicePerformanceInfo
             return cpuUsage;
         }
 
-        private float GetCpuHeat()
+        private float GetCpuTemperature()
         {
             double heat = 0;
             if (_cpuTemperature.IsAvailable)
