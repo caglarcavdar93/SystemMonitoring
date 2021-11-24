@@ -1,11 +1,5 @@
 ﻿using LibreHardwareMonitor.Hardware;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace SystemMonitoring.DevicePerformanceInfo
 {
@@ -37,10 +31,6 @@ namespace SystemMonitoring.DevicePerformanceInfo
 
         private ushort GetMemoryUsage()
         {
-            /*
-            var performanceCounter = new PerformanceCounter("Memory", "% Committed Bytes In Use", null, true);
-            var val = performanceCounter.NextValue();
-            */
             _ram.Update();
             var ramLoad = _ram.Sensors.Where(x => x.SensorType == SensorType.Load).FirstOrDefault();
             return (ushort)ramLoad.Value.GetValueOrDefault();
@@ -48,12 +38,6 @@ namespace SystemMonitoring.DevicePerformanceInfo
 
         private ushort GetCpuUsage()
         {
-            /*
-            var performanceCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total", true);
-            var val = performanceCounter.NextValue();
-            Thread.Sleep(1000);
-            val = performanceCounter.NextValue();
-            */
             _cpu.Update();
             var sensor = _cpu.Sensors
                 .Where(x => x.SensorType == SensorType.Load && x.Name == "CPU Total").FirstOrDefault();
