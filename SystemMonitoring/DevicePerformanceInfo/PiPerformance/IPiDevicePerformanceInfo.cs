@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PublishingData.DevicePerformanceInfo
+namespace SystemMonitoring.DevicePerformanceInfo
 {
     public interface IPiDevicePerformanceInfo : IDevicePerformanceInfo
     {

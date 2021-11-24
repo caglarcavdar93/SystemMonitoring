@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using Iot.Device.CpuTemperature;
 
-namespace PublishingData.DevicePerformanceInfo
+namespace SystemMonitoring.DevicePerformanceInfo
 {
     public class PiDevicePerformanceInfo : IPiDevicePerformanceInfo
     {
