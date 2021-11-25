@@ -9,6 +9,7 @@ namespace SystemMonitoring.DevicePerformanceInfo
 {
     public class DevicePerformanceInfoFactory
     {
+        
         public static IDevicePerformanceInfo Create()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
