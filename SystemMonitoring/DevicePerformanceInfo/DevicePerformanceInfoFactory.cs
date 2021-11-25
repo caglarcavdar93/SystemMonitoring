@@ -19,9 +19,13 @@ namespace SystemMonitoring.DevicePerformanceInfo
             {
                 return new PiDevicePerformanceInfo();
             }
-            else
+            else if(RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 return new WinDevicePerformanceInfo();
+            }
+            else
+            {
+                throw new NotImplementedException();
             }
         }
     }
